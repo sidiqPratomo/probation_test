@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  web:
+    image: node:alpine
+    ports:
+      - "3000:3000"
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: npm run dev

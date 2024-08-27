@@ -1,0 +1,423 @@
+@use 'fonts';
+@use 'variables';
+
+html,
+body {
+  font-family: 'Golos Text', sans-serif;
+  color: var(--dark-normal);
+}
+
+// Theme Sagara
+.app-default {
+  background-color: var(--white-normal);
+  .app-page {
+    .app-header {
+      background-color: var(--white-normal);
+      box-shadow: none;
+    }
+    .app-wrapper {
+      .app-sidebar {
+        background-color: var(--blue-deep);
+        .app-sidebar-logo {
+          border-bottom: 0;
+        }
+        .menu {
+          height: calc(100vh - 92px);
+          .menu-item {
+            .menu-link {
+              .menu-icon i {
+                color: var(--white-normal);
+              }
+              .menu-title {
+                color: var(--white-normal);
+              }
+              .menu-bullet {
+                .bullet {
+                  background-color: var(--white-normal);
+                }
+              }
+              &.active {
+                background-color: var(--neon-yellow);
+                .menu-icon i {
+                  color: var(--blue-deep);
+                }
+                .menu-bullet {
+                  .bullet {
+                    background-color: var(--blue-deep);
+                  }
+                }
+                .menu-title {
+                  color: var(--blue-deep);
+                }
+              }
+            }
+          }
+        }
+      }
+      .app-main {
+        background-color: var(--white-normal);
+      }
+    }
+  }
+}
+
+// Form
+.react-select-styled .react-select__control {
+  border: 1px solid var(--bs-gray-300);
+  .react-select__multi-value {
+    background-color: var(--gray-normal);
+  }
+}
+
+.lazy-select {
+  .css-13cymwt-control {
+    border-color: var(--gray-normal);
+  }
+  .css-1u9des2-indicatorSeparator {
+    display: none;
+  }
+}
+
+.multi_upload-image {
+  display: flex;
+  gap: 1rem;
+  label {
+    input {
+      display: none;
+    }
+    button {
+      width: 80px;
+      height: 80px;
+      padding: .5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border: 1px dashed var(--bs-gray-300)!important;
+      border-radius: 8px;
+      background-color: transparent!important;
+    }
+  }
+  img {
+    width: 80px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  a {
+    background-color: var(--white-normal);
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    text-align: center;
+    width: 24px;
+    height: 24px;
+    padding-top: 3px;
+  }
+}
+
+.single_upload-image {
+  display: flex;
+  gap: 1rem;
+  label {
+    input {
+      display: none;
+    }
+    button {
+      width: 80px;
+      height: 80px;
+      padding: .5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border: 1px dashed var(--bs-gray-300)!important;
+      border-radius: 8px;
+      background-color: transparent!important;
+    }
+  }
+  img {
+    width: 80px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  a {
+    background-color: var(--white-normal);
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    text-align: center;
+    width: 24px;
+    height: 24px;
+    padding-top: 3px;
+  }
+}
+
+.input-group {
+  .form-control {
+    background-color: transparent;
+    border-color: var(--bs-gray-300);
+  }
+  .btn {
+    z-index: 0;
+  }
+}
+.form-date ~ .form-control {
+  background-color: transparent;
+  // border: 1px solid var(--gray-normal);
+}
+.pagination {
+  .page-item {
+    .page-link {
+      font-weight: normal;
+    }
+    &.active {
+      .page-link {
+        font-weight: 500;
+      }
+    }
+    &:hover {
+      .page-link {
+        font-weight: 500;
+      }
+    }
+  }
+}
+.upload {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6.18px;
+  .progress-upload {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: color(srgb 0 0.3415 0.95 / 0.09);
+    width: 0%;
+    transition: all 1s;
+  }
+}
+form .react-tel-input {
+  margin-bottom: 13px;
+  .special-label {
+    margin-bottom: .5rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
+  .form-control {
+    height: 43px;
+    border: 1px solid var(--bs-gray-300);
+    border-radius: 0.475rem;
+    padding-left: 54px;
+    width: 100%;
+  }
+  .flag-dropdown {
+    border-radius: 0.475rem 0 0 0.475rem;
+    height: 43px;
+    top: inherit;
+    border: 1px solid var(--bs-gray-300);
+    background-color: transparent;
+    .selected-flag {
+      width: 43px;
+      padding-left: 10px;
+    }
+  }
+}
+.flatpickr-day.today,
+.flatpickr-day.today:hover,
+.flatpickr-day.today:focus {
+  background: color(srgb 0.8861 0.9185 0.99);
+  color: color(srgb 0 0.2387 0.6817);
+}
+.menu-item .menu-link {
+  position: relative;
+  &:hover {
+    .menu-title,
+    span {color: var(--neon-yellow)!important;}
+  }
+
+  &::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    transition: all .5s;
+    border-radius: 6px;
+  }
+
+  &::after{
+    background-color: #fce3003c;
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  &:hover::after{
+    opacity: 1;
+    transform: scale(1);
+  }
+  &.active {
+    &:hover {
+      .menu-title,
+      span {color: #fff!important;}
+    }
+  }
+}
+.btn{
+  // background-color: $color-dark;
+  position: relative;
+
+  &::before, &::after{
+    position: absolute;
+    top: 0;
+    display: block;
+    height: 100%;
+    width: 0;
+    background-color: rgba(255, 255, 255, 0.351);
+    content: "";
+    border-radius: 6px;
+  }
+
+  &::before{
+    left: 0;
+  }
+
+  &::after{
+    right: 0;
+    transition: width .2s;
+  }
+
+  &:hover::before{
+    width: 100%;
+    transition: width .5s;
+  }
+
+  &:hover::after{
+    background-color: transparent;
+    width: 100%;
+  }
+}
+input.form-control {
+  appearance: none;
+  background: transparent;
+  outline: none;
+
+  &:active,
+  &:focus{
+    animation: bg 1s ease-in;
+    background: color(srgb 0 0.2384 0.68 / 0.08);
+    color: #000;
+    &::placeholder {
+      color: #ccc;
+      text-align: center;
+    }
+
+  }
+}
+@keyframes bg {
+  0%{
+    background: transparent;
+   }
+   66%{
+     background: color(srgb 0 0.2384 0.68 / 0.08);
+   }
+
+   100%{
+     background: color(srgb 0 0.2384 0.68 / 0.08);
+   }
+}
+.bg-login {
+  background: linear-gradient(-45deg, #ffffff, #b7fabd, #a5bffc, #ffffff);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.flatpickr-current-month .numInputWrapper {
+  width: 6ch;
+  display: inline-block;
+  position: absolute;
+  top: 6px;
+  right: 18px;
+ }
+
+.select_custom {
+  div[class*=container] {
+    .css-13cymwt-control {
+      border: 1px solid var(--gray-normal);
+    }
+    span {
+      display: none;
+    }
+  }
+}
+
+// flatpickr
+.flatpickr-months {
+  padding-left: 0;
+  padding-right: 0;
+  .flatpickr-next-month {top: 7px!important; margin-right: 6px;}
+  .flatpickr-prev-month {top: 7px!important; margin-left: 6px;}
+  .flatpickr-month {
+    top: 0;
+    .flatpickr-current-month {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 0;
+      width: inherit;
+      height: inherit;
+      position: inherit;
+      left: inherit;
+      .flatpickr-monthDropdown-months {
+        line-height: 24px;
+        appearance: none;
+        font-size: 1.1rem;
+        padding: 2px 6px;
+        border-radius: 4px;
+        &:hover {
+          background-color: #e6e6e6;
+        }
+        .flatpickr-monthDropdown-month {
+          font-size: 1.1rem;
+        }
+      }
+      .numInputWrapper {
+        padding: 2px 16px 2px 6px;
+        position: relative;
+        top: inherit;
+        right: inherit;
+        width: 55px;
+        .numInput {
+          padding: 0;
+          line-height: 24px;
+        }
+        &:hover {
+          background-color: #e6e6e6;
+        }
+        .arrowUp {top: 10%;}
+        .arrowDown {top: 40%;}
+      }
+    }
+  }
+}

@@ -1,0 +1,183 @@
+@use 'fonts';
+@use 'variables';
+
+html,
+body {
+  font-family: 'Golos Text', sans-serif;
+  color: var(--dark-normal);
+}
+
+// Theme Sagara
+.app-default {
+  background-color: var(--white-normal);
+  .app-page {
+    .app-header {
+      background-color: var(--white-normal);
+      box-shadow: none;
+    }
+    .app-wrapper {
+      .app-sidebar {
+        background-color: var(--blue-deep);
+        .app-sidebar-logo {
+          border-bottom: 0;
+        }
+        .menu {
+          .menu-item {
+            .menu-link {
+              .menu-icon i {
+                color: var(--white-normal);
+              }
+              .menu-title {
+                color: var(--white-normal);
+              }
+              .menu-bullet {
+                .bullet {
+                  background-color: var(--white-normal);
+                }
+              }
+              &.active {
+                background-color: var(--neon-yellow);
+                .menu-icon i {
+                  color: var(--blue-deep);
+                }
+                .menu-bullet {
+                  .bullet {
+                    background-color: var(--blue-deep);
+                  }
+                }
+                .menu-title {
+                  color: var(--blue-deep);
+                }
+              }
+            }
+          }
+        }
+      }
+      .app-main {
+        background-color: var(--white-normal);
+      }
+    }
+  }
+}
+
+// Form
+.react-select-styled .react-select__control {
+  border: 1px solid var(--gray-normal);
+  .react-select__multi-value {
+    background-color: var(--gray-normal);
+  }
+}
+
+.lazy-select {
+  .css-13cymwt-control {
+    border-color: var(--gray-normal);
+  }
+  .css-1u9des2-indicatorSeparator {
+    display: none;
+  }
+}
+
+.multi_upload-image {
+  display: flex;
+  gap: 1rem;
+  label {
+    input {
+      display: none;
+    }
+    button {
+      width: 80px;
+      height: 80px;
+      padding: .5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border: 1px dashed #ccc!important;
+      border-radius: 8px;
+      background-color: transparent!important;
+    }
+  }
+  img {
+    width: 80px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  a {
+    background-color: var(--white-normal);
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    text-align: center;
+    width: 24px;
+    height: 24px;
+    padding-top: 3px;
+  }
+}
+
+.single_upload-image {
+  display: flex;
+  gap: 1rem;
+  label {
+    input {
+      display: none;
+    }
+    button {
+      width: 80px;
+      height: 80px;
+      padding: .5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border: 1px dashed #ccc!important;
+      border-radius: 8px;
+      background-color: transparent!important;
+    }
+  }
+  img {
+    width: 80px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  a {
+    background-color: var(--white-normal);
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    text-align: center;
+    width: 24px;
+    height: 24px;
+    padding-top: 3px;
+  }
+}
+
+.input-group {
+  .form-control {
+    background-color: transparent;
+    border-color: var(--gray-normal);
+  }
+  .btn {
+    z-index: 0;
+  }
+}
+.form-date ~ .form-control {
+  background-color: transparent;
+  border: 1px solid var(--gray-normal);
+}
+
+.select_custom {
+  div[class*=container] {
+    .css-13cymwt-control {
+      border: 1px solid var(--gray-normal);
+    }
+    span {
+      display: none;
+    }
+  }
+}
