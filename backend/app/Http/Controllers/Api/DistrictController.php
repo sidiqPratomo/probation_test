@@ -109,6 +109,15 @@ class DistrictController extends ApiResourcesController
                 return $this->response->notFoundResponse();
             }
 
+            $checkDistrictCode = Districts::where('district_code', $request->get('district_code'))->first();
+            if ($checkDistrictCode) {
+                return response()->json([
+                    'status' => false,
+                    'code' => 422,
+                    'message' => 'District code already exists',
+                ], 422);
+            }
+
             $validators = $this->district->validator($request);
             if ($validators->fails()) {
                 return $this->validatorErrors($validators);

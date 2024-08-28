@@ -109,6 +109,15 @@ class SubDistrictController extends ApiResourcesController
                 return $this->response->notFoundResponse();
             }
 
+            $checkDistrictCode = SubDistricts::where('subdistrict_code', $request->get('subdistrict_code'))->first();
+            if ($checkDistrictCode) {
+                return response()->json([
+                    'status' => false,
+                    'code' => 422,
+                    'message' => 'subdistrict_code code already exists',
+                ], 422);
+            }
+
             $validators = $this->subDistrict->validator($request);
             if ($validators->fails()) {
                 return $this->validatorErrors($validators);
