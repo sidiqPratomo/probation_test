@@ -1,12 +1,4 @@
-create table subdistricts(id SERIAL primary key, subdistrict_code varchar(255), district_code int, name varchar(255),created_by varchar(255), updated_by varchar(255), created_time DATE, updated_time DATE, status tinyint);
-
-create table districts(id SERIAL primary key, district_code varchar(255), city_code int, name varchar(255),created_by varchar(255), updated_by varchar(255), created_time DATE, updated_time DATE, status tinyint);
-
-UPDATE subdistricts 
-SET status = 1, updated_time = now(), created_time =now()
-WHERE id >= 1;
-
- CREATE TABLE songs (
+CREATE TABLE songs (
  song_id SERIAL PRIMARY KEY,
  title VARCHAR(255),
  duration INT,-- duration in seconds, for example
@@ -17,6 +9,7 @@ WHERE id >= 1;
  composer_id SERIAL PRIMARY KEY,
  composer_name VARCHAR(255)
  );
+
  CREATE TABLE contracts (
  contract_id SERIAL PRIMARY KEY,
  song_id INT REFERENCES songs(song_id),
@@ -24,8 +17,8 @@ WHERE id >= 1;
  contract_date DATE,
  royalty_rate DECIMAL(5, 2)-- assuming royalty rate as a decimal value
  );
- 
-INSERT INTO composers (composer_name) VALUES
+
+ INSERT INTO composers (composer_name) VALUES
 ('Adam'),
 ('Bono');
 
@@ -43,12 +36,12 @@ INSERT INTO contracts (song_id, composer_id, contract_date, royalty_rate) VALUES
 (3, 1,  '2023-03-01', 0.12),
 (4, 2,  '2023-06-01', 0.30);
 
+
 SELECT
     s.title AS "Song Title",
     s.duration AS "Song Duration",
     s.release_date AS "Song Release Date",
     c.composer_name AS "Composer Name",
-    ctr.publisher_name AS "Publisher Name",
     ctr.contract_date AS "Contract Date",
     CASE
         WHEN s.duration > 300 AND ctr.royalty_rate > 0.2 THEN s.duration * ctr.royalty_rate * 1.2
@@ -62,9 +55,9 @@ JOIN
 JOIN
     composers c ON ctr.composer_id = c.composer_id
 WHERE
-    s.release_date >= '2021-02-20'
+    s.release_date <= '2021-02-20'
     AND ctr.contract_date >= '2021-01-01'
     AND (
-        (c.composer_name = 'Adam' AND ctr.publisher_name = 'Alfa') OR
-        (c.composer_name = 'Bono' AND ctr.publisher_name = 'Beta')
+        (c.composer_name = 'Adam') OR
+        (c.composer_name = 'Bono')
     );
