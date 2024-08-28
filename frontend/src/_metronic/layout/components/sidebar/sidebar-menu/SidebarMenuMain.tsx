@@ -65,10 +65,31 @@ const SidebarMenuMain = () => {
       ></SidebarMenuItem>
 
       <SidebarMenuItem
-        to="/users"
-        title="Users"
-        icon="profile-circle"
-        fontIcon="bi-person"
+        to="/province"
+        title="Province"
+        fontIcon="bi-archive"
+        icon="element-plus"
+      ></SidebarMenuItem>
+
+      <SidebarMenuItem
+        to="/city"
+        title="City"
+        fontIcon="bi-archive"
+        icon="element-plus"
+      ></SidebarMenuItem>
+
+      <SidebarMenuItem
+        to="/district"
+        title="District"
+        fontIcon="bi-archive"
+        icon="element-plus"
+      ></SidebarMenuItem>
+
+      <SidebarMenuItem
+        to="/subdistrict"
+        title="SubDistrict"
+        fontIcon="bi-archive"
+        icon="element-plus"
       ></SidebarMenuItem>
 
       <SidebarMenuItem

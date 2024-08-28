@@ -88,8 +88,8 @@ class ApiResourcesController extends Controller
     {
         try {
             $this->checkModel();
-            $entry = $this->model->statusActive()->find($this->id);
 
+            $entry = $this->model->statusActive()->find($this->id);
             if (!$entry) {
                 return $this->response->notFoundResponse();
             }

@@ -5,6 +5,7 @@ namespace App\Services;
 use Illuminate\Http\JsonResponse;
 
 interface ResponseService {
+
     public static function init();
     public function response(array $data = [], string $message = 'success', int $statusCode = 200): JsonResponse;
     public function successResponse(array $data = [], string $message = 'success'): JsonResponse;
@@ -13,4 +14,6 @@ interface ResponseService {
     public function unauthorizedResponse(string $message = 'Unauthorized'): JsonResponse;
     public function forbiddenResponse(string $message = 'Forbidden'): JsonResponse;
     public function internalServerErrorResponse(string $message = 'Internal server error'): JsonResponse;
+
+    public function sendResponse($message, $data, $count = 0, $status = 200): JsonResponse;
 }

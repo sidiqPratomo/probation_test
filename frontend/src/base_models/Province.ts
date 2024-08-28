@@ -1,4 +1,11 @@
 export type Province = {
-  id: number
+  id?: number
   name: string
+  island_id: string
+}
+
+export const InitialValue = {
+  id: 0,
+  name: '',
+  island_id: '',
 }

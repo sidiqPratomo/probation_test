@@ -38,11 +38,41 @@ export type ResponseModel<T> = {
     code?: number;
     message?: string;
     data: {
+      data: any;
       result: Array<T>;
       count: number;
     };
   };
 };
+
+// export type ResponseModelIsland<T> = {
+//   data: {
+//       data: Array<T>;
+//       count: number;
+//   };
+// };
+
+
+export interface ResponseModelIsland<T> {
+  success: boolean;
+  message: string;
+  data: T[];  // Adjusted to reflect that data is an array of Island
+  count: number;
+}
+
+export interface ResponseModelProvince<T> {
+  success: boolean;
+  message: string;
+  data: T[];  // Adjusted to reflect that data is an array of Island
+  count: number;
+}
+
+export interface ResponseModelCity<T> {
+  success: boolean;
+  message: string;
+  data: T[];  // Adjusted to reflect that data is an array of Island
+  count: number;
+}
 
 export type ResponseSingleModel<T> = {
   data: {

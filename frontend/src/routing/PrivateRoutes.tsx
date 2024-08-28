@@ -23,6 +23,18 @@ const PrivateRoutes = () => {
   const ExamplesPage = lazy(
     () => import("../pages/examples/router/IndexRoutes")
   );
+  const ProvincePage = lazy(
+    () => import("../pages/province/router/IndexRoutes")
+  );
+  const DistrictPage = lazy(
+    () => import("../pages/district/router/IndexRoutes")
+  );
+  const CityPage = lazy(
+    () => import("../pages/city/router/IndexRoutes")
+  );
+  const SubdistrictPage = lazy(
+    () => import("../pages/subdistrict/router/IndexRoutes")
+  );
 
   return (
     <Routes>
@@ -86,6 +98,38 @@ const PrivateRoutes = () => {
           element={
             <SuspensedView>
               <ExamplesPage />
+            </SuspensedView>
+          }
+        />
+        <Route
+          path="/province/*"
+          element={
+            <SuspensedView>
+              <ProvincePage />
+            </SuspensedView>
+          }
+        />
+        <Route
+          path="/city/*"
+          element={
+            <SuspensedView>
+              <CityPage />
+            </SuspensedView>
+          }
+        />
+        <Route
+          path="/district/*"
+          element={
+            <SuspensedView>
+              <DistrictPage />
+            </SuspensedView>
+          }
+        />
+        <Route
+          path="/subdistrict/*"
+          element={
+            <SuspensedView>
+              <SubdistrictPage />
             </SuspensedView>
           }
         />

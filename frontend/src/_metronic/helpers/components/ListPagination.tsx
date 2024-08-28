@@ -38,7 +38,7 @@ const ListPagination = ({
   let dataCount = 0;
 
   if (response) {
-    const collection = response.data.data;
+    const collection = response.data;
     if (collection) {
       const { count } = collection;
       dataCount = count;

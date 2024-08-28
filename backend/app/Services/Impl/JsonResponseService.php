@@ -8,6 +8,7 @@ use Illuminate\Http\JsonResponse;
 class JsonResponseService implements ResponseService
 {
     protected $response;
+    protected $data = array();
 
     public function __construct()
     {
@@ -17,6 +18,18 @@ class JsonResponseService implements ResponseService
             'message' => 'success',
             'code' => 200,
         ];
+    }
+
+    public function sendResponse($message, $data, $count = 0, $status = 200): JsonResponse
+    {
+        $response = [
+            "success" => true,
+            "message" => $message,
+            "data" => $data ?? $this->data['data'],
+            "count" => $count
+        ];
+
+        return response()->json($response, $status);
     }
 
     public static function init()
