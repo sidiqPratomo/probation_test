@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::create('province', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('island_id')->nullable()->after('name');
+            $table->unsignedBigInteger('island_id')->nullable();
             $table->defaultColumn();
         });
     }
